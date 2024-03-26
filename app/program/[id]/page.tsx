@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 async function getProgram(id: string) {
   const res = await fetch(`http://localhost:3001/programs/${id}`);
   if (!res.ok) {
@@ -11,11 +13,14 @@ const page = async ({ params }: { params: { id: string } }) => {
   return (
     <div className="w-full flex align-center justify-center mt-8">
       <div className="w-8/12 mx-auto">
-        <img
-          src={program.image}
-          alt={program.name}
-          className="w-full h-96 object-cover"
-        />
+        <div className="w-full h-96 relative">
+          <Image
+            src={program.image}
+            alt={program.name}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
         <div className="mt-6 grid grid-cols-3 gap-4">
           <div className="col-span-2">
             <h1 className="text-2xl font-bold">{program.name}</h1>
