@@ -10,6 +10,7 @@
     "server": "json-server --watch db.json --port 3001"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.42.0",
     "json-serve": "^0.1.0",
     "next": "14.1.4",
     "react": "^18",
